@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MealMate | Smart Recipe & Grocery Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="logo">🥬</div>
+            Meal<span>Mate</span>
+        </div>
+
+        <nav class="nav">
+            <button class="active" data-page="home">Discover</button>
+
+            <button data-page="wishlist">
+                ♡ Wishlist <span id="wishCount"></span>
+            </button>
+
+            <button data-page="shopping">
+                Shopping list <span id="shopCount"></span>
+            </button>
+
+            <button data-page="planner">Meal planner</button>
+        </nav>
+
+        <select class="location" id="city">
+            <option>Hyderabad</option>
+            <option>Warangal</option>
+            <option>Bengaluru</option>
+        </select>
+
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Home / Discover Page -->
+        <section id="homePage">
+
+            <div class="hero">
+
+                <div>
+                    <div class="eyebrow">
+                        Plan smarter · Shop easier · Cook happier
+                    </div>
+
+                    <h1>
+                        200 recipes.<br>
+                        One smarter grocery list.
+                    </h1>
+
+                    <p>
+                        Explore Indian favourites and global dishes, see what you need,
+                        compare estimated grocery costs and follow clear cooking steps.
+                    </p>
+
+                    <div class="searchrow">
+
+                        <div class="searchbox">
+                            <span>⌕</span>
+
+                            <input
+                                id="search"
+                                placeholder="Search 200 recipes — try dosa, biryani, paneer..."
+                            >
+                        </div>
+
+                        <button class="primary" id="searchBtn">
+                            Find recipe
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="hero-art">🥘</div>
+
+            </div>
+
+            <!-- Recipe Collection -->
+            <div class="sectionhead">
+
+                <div>
+                    <h2>Explore the recipe collection</h2>
+
+                    <p>
+                        <strong id="resultCount">200</strong>
+                        recipes · choose a category or search by name
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="chips" id="categories"></div>
+
+            <div
+                class="recipegrid"
+                id="recipeGrid"
+                style="margin-top: 16px"
+            ></div>
+
+        </section>
+
+        <!-- Recipe Details Page -->
+        <section id="detailPage" class="hidden">
+
+            <button class="back" id="backBtn">
+                ← Back to recipes
+            </button>
+
+            <div id="detailContent"></div>
+
+        </section>
+
+        <!-- Wishlist Page -->
+        <section id="wishlistPage" class="hidden">
+
+            <div class="sectionhead">
+
+                <div>
+                    <h2>Your saved recipes ♡</h2>
+
+                    <p>
+                        Your favourites stay saved on this device.
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="wishlistContent"></div>
+
+        </section>
+
+        <!-- Shopping List Page -->
+        <section id="shoppingPage">
+
+            <div class="sectionhead">
+
+                <div>
+                    <h2>Your shopping list</h2>
+
+                    <p>
+                        Tick off ingredients as you buy them.
+                    </p>
+                </div>
+
+                <button class="smallbtn" id="clearShop">
+                    Clear list
+                </button>
+
+            </div>
+
+            <div class="panel">
+
+                <div style="display: flex; gap: 10px; flex-wrap: wrap">
+
+                    <input
+                        id="manualItem"
+                        placeholder="Add an item (e.g. tomatoes)"
+                        style="flex: 1; min-width: 180px; padding: 12px; border: 1px solid var(--line); border-radius: 10px"
+                    >
+
+                    <button class="primary" id="addManual">
+                        Add item
+                    </button>
+
+                </div>
+
+                <div
+                    id="shoppingContent"
+                    style="margin-top: 14px"
+                ></div>
+
+            </div>
+
+        </section>
+
+        <!-- Weekly Meal Planner -->
+        <section id="plannerPage" class="hidden">
+
+            <div class="sectionhead">
+
+                <div>
+                    <h2>Weekly meal planner</h2>
+
+                    <p>
+                        Choose a recipe for each meal. Your plan saves automatically.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="panel">
+
+                <div class="daygrid" id="plannerGrid"></div>
+
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <div class="footer">
+            MealMate · Web Technologies project ·
+            Supermarket prices are illustrative sample estimates, not live quotations.
+        </div>
+
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- JavaScript Files -->
+    <script src="recipes.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
